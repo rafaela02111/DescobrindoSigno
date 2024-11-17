@@ -1,0 +1,65 @@
+import java.util.Scanner;
+
+public class SignoDetector {
+
+    // Função principal que inicia o programa
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Solicita ao usuário o dia e o mês de nascimento
+        System.out.println("Digite o dia de nascimento:");
+        int dia = scanner.nextInt();
+        System.out.println("Digite o mês de nascimento (número):");
+        int mes = scanner.nextInt();
+
+        // Chama a função que determina o signo e exibe o resultado
+        String signo = detectarSigno(dia, mes);
+        System.out.println("Seu signo é: " + signo);
+
+        scanner.close();
+    }
+
+    // Função que determina o signo com base no dia e no mês fornecidos
+    public static String detectarSigno(int dia, int mes) {
+        switch (mes) {
+            case 1:
+                if (dia <= 19) return "Capricórnio";
+                else return "Aquário";
+            case 2:
+                if (dia <= 18) return "Aquário";
+                else return "Peixes";
+            case 3:
+                if (dia <= 20) return "Peixes";
+                else return "Áries";
+            case 4:
+                if (dia <= 19) return "Áries";
+                else return "Touro";
+            case 5:
+                if (dia <= 20) return "Touro";
+                else return "Gêmeos";
+            case 6:
+                if (dia <= 20) return "Gêmeos";
+                else return "Câncer";
+            case 7:
+                if (dia <= 22) return "Câncer";
+                else return "Leão";
+            case 8:
+                if (dia <= 22) return "Leão";
+                else return "Virgem";
+            case 9:
+                if (dia <= 22) return "Virgem";
+                else return "Libra";
+            case 10:
+                if (dia <= 22) return "Libra";
+                else return "Escorpião";
+            case 11:
+                if (dia <= 21) return "Escorpião";
+                else return "Sagitário";
+            case 12:
+                if (dia <= 21) return "Sagitário";
+                else return "Capricórnio";
+            default:
+                return "Mês inválido!";
+        }
+    }
+}
